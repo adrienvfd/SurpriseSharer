@@ -3,7 +3,6 @@ package surprise.bag;
 import surprise.ISurprise;
 
 public class FifoBag extends AbstractBag {
-
     @Override
     public ISurprise takeOut() {
         if (getSurpriseList().isEmpty()){

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 abstract class AbstractBag implements IBag {
-
     private ArrayList<ISurprise> surpriseList;
     private static Random random = new Random();
 
@@ -43,6 +42,5 @@ abstract class AbstractBag implements IBag {
     public void removeInSurpriseList(int num){
         surpriseList.remove(num);
     }
-
 
 }

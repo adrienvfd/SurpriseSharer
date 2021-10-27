@@ -28,14 +28,13 @@ public class FortuneCookie implements ISurprise{
             {"Money and success don’t change people; they merely amplify what is already there.", "Will Smith"}
     };
 
-
     private FortuneCookie(String message, String author){
         this.message = message;
         this.author = author;
     }
 
     public static FortuneCookie generate(){
-        int random = randomElement.nextInt(QUOTES.length);
+        int random = ISurprise.randomElement.nextInt(QUOTES.length);
         return new FortuneCookie(QUOTES[random][0], QUOTES[random][1]);
     }
 

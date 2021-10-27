@@ -1,7 +1,5 @@
 package surprise;
 
-import surprise.bag.FifoBag;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -18,30 +16,23 @@ public final class GatherSurprises {
     }
 
     public static ISurprise generateRandomSurprise() {
-        ISurprise newSurprise = null;
 
         switch (random.nextInt(NUMBER_OF_SURPRISE_TYPES)) {
-            case 0:
-                newSurprise = FortuneCookie.generate() ;
-                break;
-            case 1:
-                newSurprise = Candies.generate();
-                break;
-            case 2:
-                newSurprise = MinionToy.generate();
-                break;
+            case 0: return FortuneCookie.generate(); ;
+            case 1: return Candies.generate();
+            case 2: return MinionToy.generate();
+            default:
+                System.err.println("error, NUMBER_OF_SURPRISE_TYPES not up to date");
+                return null;
         }
-        return newSurprise;
     }
 
-    public static void gather(int n){
+    public static ArrayList<ISurprise> gather(int n){
         ArrayList<ISurprise> surpriseArrayList= new ArrayList<>();
-
         for (int i = 0; i < n; i++){
             surpriseArrayList.add(generateRandomSurprise());
         }
-
+        return surpriseArrayList;
 
     }
-
 }

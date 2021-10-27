@@ -15,11 +15,10 @@ public class Candies implements ISurprise{
     }
 
     public static Candies generate(){
-        int randomNum = randomElement.nextInt(MAX_NUMBER_OF_CANDIES);
-        int randomType = randomElement.nextInt(TYPE_LIST.length);
+        int randomNum = ISurprise.randomElement.nextInt(MAX_NUMBER_OF_CANDIES);
+        int randomType = ISurprise.randomElement.nextInt(TYPE_LIST.length);
 
-        Candies newCandy = new Candies(randomNum, TYPE_LIST[randomType]);
-        return newCandy;
+        return new Candies(randomNum, TYPE_LIST[randomType]);
     }
 
     @Override

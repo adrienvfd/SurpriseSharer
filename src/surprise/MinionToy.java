@@ -11,13 +11,13 @@ public class MinionToy implements ISurprise{
 
     public static MinionToy generate(){
         if (crtNameIndex < 0){
-            crtNameIndex = randomElement.nextInt(NAME_LIST.length);
+            crtNameIndex = ISurprise.randomElement.nextInt(NAME_LIST.length);
         }
+
         MinionToy newMinionToy = new MinionToy(NAME_LIST[crtNameIndex]);
         crtNameIndex++;
-        if (crtNameIndex >= NAME_LIST.length){
-            crtNameIndex = 0;
-        }
+        crtNameIndex %= NAME_LIST.length;
+
         return newMinionToy;
     }
 
