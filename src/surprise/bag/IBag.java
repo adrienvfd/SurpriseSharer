@@ -3,6 +3,8 @@ package surprise.bag;
 import surprise.ISurprise;
 
 public interface IBag {
+    public static final String[] TYPES_OF_BAGS = {"RANDOM", "FIFO", "LIFO"};
+
     // adds a surprise in the surprise.bag
     void put(ISurprise newSurprise);
 

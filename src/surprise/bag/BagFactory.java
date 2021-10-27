@@ -4,11 +4,10 @@ import java.util.Arrays;
 
 public class BagFactory implements  IBagFactory{
 
-    @Override
     public IBag makeBag(String type) {
         type = type.toUpperCase();
         // Let's find the index of String in Allowed types of bags.
-        int index = Arrays.stream(IBagFactory.TYPES_OF_BAGS).toList()
+        int index = Arrays.stream(IBag.TYPES_OF_BAGS).toList()
                 .indexOf(type);
 
         switch (index){
