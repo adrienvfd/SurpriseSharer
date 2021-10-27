@@ -9,7 +9,7 @@ public class MinionToy implements ISurprise{
         this.name = name;
     }
 
-    public static MinionToy Generate(){
+    public static MinionToy generate(){
         if (crtNameIndex < 0){
             crtNameIndex = randomElement.nextInt(NAME_LIST.length);
         }

@@ -1,10 +1,9 @@
 package surprise;
 
-import java.util.Random;
-
 public class FortuneCookie implements ISurprise{
 
     private String message;
+    private String author;
     private static final String[][] QUOTES = {
             {"Take out the fortune before you eat the cookie.", "Dave Barry"},
             {"The final act of business judgment is intuitive.", "Alfred P. Sloan"},
@@ -30,23 +29,19 @@ public class FortuneCookie implements ISurprise{
     };
 
 
-    FortuneCookie(String message, String author){
+    private FortuneCookie(String message, String author){
         this.message = message;
+        this.author = author;
     }
-
 
     public static FortuneCookie generate(){
         int random = randomElement.nextInt(QUOTES.length);
-
-        FortuneCookie fortuneCookie= new FortuneCookie(QUOTES[random][0], QUOTES[random][1]);
-        return fortuneCookie;
+        return new FortuneCookie(QUOTES[random][0], QUOTES[random][1]);
     }
-
-
 
     @Override
     public void enjoy() {
-        System.out.println(message);
+        System.out.println(message + " - " + author);
     }
 }
 
