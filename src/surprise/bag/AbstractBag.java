@@ -2,8 +2,8 @@ package surprise.bag;
 
 import surprise.ISurprise;
 
-import java.util.ArrayList;
 import java.util.Random;
+import java.util.ArrayList;
 
 abstract class AbstractBag implements IBag {
     private ArrayList<ISurprise> surpriseList;
