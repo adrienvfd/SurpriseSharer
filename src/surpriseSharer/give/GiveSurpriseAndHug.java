@@ -4,12 +4,12 @@ import surpriseSharer.bag.IBag;
 
 public class GiveSurpriseAndHug extends AbstractGiveSurprises {
 
-    GiveSurpriseAndHug(IBag container, int waitTime) {
-        super(container, waitTime);
+    GiveSurpriseAndHug(String containerType, int waitTime) {
+        super(containerType, waitTime);
     }
 
     @Override
-    public void giveWithPassion() {
+    protected void giveWithPassion() {
         System.out.println("Warm wishes and a big hug!");
     }
 }

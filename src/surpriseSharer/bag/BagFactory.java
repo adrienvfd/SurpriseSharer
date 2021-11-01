@@ -15,7 +15,7 @@ public class BagFactory implements  IBagFactory{
             case 1: return new FifoBag();
             case 2: return new LifoBag();
             default:
-                System.err.printf("Error: this type of surprise.bag does not exist");
+                System.err.printf("Error: this type of surprise.bag does not exist \n");
                 return null;
         }
     }

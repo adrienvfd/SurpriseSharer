@@ -1,15 +1,16 @@
 package surpriseSharer.give;
+import surpriseSharer.bag.IBagFactory;
 import surpriseSharer.surprise.ISurprise;
 import surpriseSharer.bag.BagFactory;
 import surpriseSharer.bag.IBag;
 
 import java.util.concurrent.TimeUnit;
 
-
-
 public abstract class AbstractGiveSurprises implements IGiveSurprise{
-    IBag container;
-    int waitTime; // wait time in seconds
+    private IBag container;
+    private int waitTime; // wait time in seconds
+    private final IBagFactory bagFactory;
+
 
     /*
     (…)	Constructorul va primi 2 parametri:
@@ -18,8 +19,9 @@ public abstract class AbstractGiveSurprises implements IGiveSurprise{
 
      */
 
-    AbstractGiveSurprises(IBag container, int waitTime){
-        this.container = container;
+    AbstractGiveSurprises(String containerType, int waitTime){
+        bagFactory = new BagFactory();
+        this.container = bagFactory.makeBag(containerType);
 
         if (waitTime < 0){
             waitTime = 0;
@@ -27,7 +29,7 @@ public abstract class AbstractGiveSurprises implements IGiveSurprise{
         this.waitTime = waitTime;
     }
 
-    void put(ISurprise newSurprise){
+    public void put(ISurprise newSurprise){
         //adds a surprise to container.
         container.put(newSurprise);
     }
@@ -37,12 +39,10 @@ public abstract class AbstractGiveSurprises implements IGiveSurprise{
         container.put(surprises);
     }
 
-    @Override
-    public void give(){
-        ISurprise surprise = container.takeOut();
-        surpriseSharer.helpers.Separation.separate();
-        this.giveWithPassion();
-        surprise.enjoy();
+    private void give(){
+        //ISurprise surprise = container.takeOut();
+        //surprise.enjoy();
+        container.takeOut().enjoy();
         surpriseSharer.helpers.Separation.separate();
 
         try {
@@ -53,20 +53,34 @@ public abstract class AbstractGiveSurprises implements IGiveSurprise{
     }
 
     @Override
+    public void giveOne(){
+        surpriseSharer.helpers.Separation.separate();
+        give();
+        giveWithPassion();
+    }
+
+    @Override
     public void giveAll(){
         // Sleep for X seconds - code snippet
+        surpriseSharer.helpers.Separation.separate();
         while (!container.isEmpty()){
             this.give();
         }
+        giveWithPassion();
+        surpriseSharer.helpers.Separation.separate();
+
     }
 
-    boolean isEmpty(){
-        return container.isEmpty();
+    @Override
+    public void gatherAndPut(int number){
+        container.put(surpriseSharer.surprise.GatherSurprises.gather(number));
     }
 
-    public abstract void giveWithPassion();
-    /* O metoda abstracta, care tine locul unei actiuni ce va fi efectuata dupa daruirea fiecarei surprize (ex: aplauze, o imbratisare etc.).
-            → Obs: aceasta metoda va fi apelata imediat dupa oferirea unei surprize,
-             indiferent de metoda apelata pentru impartirea surprizelor (i.e. give() sau giveAll()).
-            → Obs2: metoda va fi vizibila doar in interiorul pachetului si pe lantul de mostenire. */
+    @Override
+    public IBag getContainer() {
+        return container;
+    }
+
+    protected abstract void giveWithPassion();
+
 }

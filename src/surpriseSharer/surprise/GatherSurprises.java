@@ -12,14 +12,14 @@ public final class GatherSurprises {
     // We prevent instantiation of the class:
     private GatherSurprises(){}
 
-    private static ISurprise generateRandomSurprise() {
+    private static ISurprise gather() {
         int randomNum = RandomHelper.getNewRandomInt(NUMBER_OF_SURPRISE_TYPES);
         switch (randomNum) {
             case 0: return FortuneCookie.generate();
             case 1: return Candies.generate();
             case 2: return MinionToy.generate();
             default:
-                System.err.println("error, NUMBER_OF_SURPRISE_TYPES not up to date");
+                System.err.println("error, NUMBER_OF_SURPRISE_TYPES not up to date \n");
                 return null;
         }
     }
@@ -28,9 +28,10 @@ public final class GatherSurprises {
         ArrayList<ISurprise> surpriseArrayList= new ArrayList<>();
         if (n > 0) {
             for (int i = 0; i < n; i++) {
-                surpriseArrayList.add(generateRandomSurprise());
+                surpriseArrayList.add(gather());
             }
         }
         return surpriseArrayList;
     }
+
 }

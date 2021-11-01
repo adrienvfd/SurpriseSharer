@@ -42,6 +42,11 @@ public class FortuneCookie implements ISurprise{
     public void enjoy() {
         System.out.println(message + " - " + author);
     }
+
+    @Override
+    public String toString(){
+        return "ITEM: Fortune Cookie || MESSAGE: " + message + " || AUTHOR: " + author;
+    }
 }
 
 /*

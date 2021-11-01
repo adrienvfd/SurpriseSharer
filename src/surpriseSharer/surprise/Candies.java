@@ -6,12 +6,15 @@ public class Candies implements ISurprise{
 
     private static final String[] TYPE_LIST = {"chocolate", "jelly", "fruits", "vanilla"};
     private static final int MAX_NUMBER_OF_CANDIES = 100;
-    private int number;
+    private int amount;
     private String type;
 
-    Candies(int number, String type){
-        this.number = number;
-        this.type = type;
+    Candies(int amount, String type){
+        if (amount < 0){
+            amount = 1;
+        }
+        this.amount = amount;
+        this.type = type.toLowerCase();
 
     }
 
@@ -24,7 +27,12 @@ public class Candies implements ISurprise{
 
     @Override
     public void enjoy() {
-        System.out.println("Yum yum, here are " + number + " " + type);
+        System.out.println("Yum yum, here are " + amount + " " + type);
+    }
+
+    @Override
+    public String toString(){
+        return "ITEM: Candy || TYPE: " + type + " || AMOUNT: " + amount;
     }
 }
 

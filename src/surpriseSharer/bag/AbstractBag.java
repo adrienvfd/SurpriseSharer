@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.ArrayList;
 
 abstract class AbstractBag implements IBag {
+
     private ArrayList<ISurprise> surpriseList = new ArrayList<>();
 
     @Override

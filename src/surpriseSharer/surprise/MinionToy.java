@@ -26,6 +26,11 @@ public class MinionToy implements ISurprise{
     public void enjoy() {
         System.out.println("Here is minion " + name + "!");
     }
+
+    @Override
+    public String toString(){
+        return "ITEM: MINION || NAME: " + name;
+    }
 }
 
 /*
