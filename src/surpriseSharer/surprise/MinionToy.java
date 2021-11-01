@@ -1,5 +1,5 @@
 package surpriseSharer.surprise;
-import surpriseSharer.helpers.randomHelper;
+import surpriseSharer.helpers.RandomHelper;
 
 public class MinionToy implements ISurprise{
     private static final String[] NAME_LIST = {"Dave", "Carl", "Kevin", "Stuart", "Jerry", "Tim"};
@@ -12,7 +12,7 @@ public class MinionToy implements ISurprise{
 
     public static MinionToy generate(){
         if (crtNameIndex < 0){
-            crtNameIndex = randomHelper.getNewRandomInt(NAME_LIST.length);
+            crtNameIndex = RandomHelper.getNewRandomInt(NAME_LIST.length);
         }
 
         MinionToy newMinionToy = new MinionToy(NAME_LIST[crtNameIndex]);

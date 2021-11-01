@@ -1,9 +1,11 @@
 package surpriseSharer.give;
 
+import surpriseSharer.bag.IBag;
+
 public class GiveSurpriseAndApplause extends AbstractGiveSurprises{
 
-    public GiveSurpriseAndApplause(String containerType, int waitTime) {
-        super(containerType, waitTime);
+    public GiveSurpriseAndApplause(IBag container, int waitTime) {
+        super(container, waitTime);
     }
     @Override
     public void giveWithPassion() {

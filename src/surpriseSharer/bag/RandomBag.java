@@ -1,7 +1,7 @@
 package surpriseSharer.bag;
 
 import surpriseSharer.surprise.ISurprise;
-import surpriseSharer.helpers.randomHelper;
+import surpriseSharer.helpers.RandomHelper;
 
 public class RandomBag extends AbstractBag {
 
@@ -10,7 +10,7 @@ public class RandomBag extends AbstractBag {
         if (getSurpriseList().isEmpty()){
             return null;
         }
-        int randomNumber = randomHelper.getNewRandomInt(getSurpriseList().size());
+        int randomNumber = RandomHelper.getNewRandomInt(getSurpriseList().size());
         // Copy the surprise
         ISurprise surprise = getSurpriseList().get(randomNumber);
         // Delete the surprise from list

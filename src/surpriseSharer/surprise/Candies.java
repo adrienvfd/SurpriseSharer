@@ -1,6 +1,6 @@
 package surpriseSharer.surprise;
 
-import surpriseSharer.helpers.randomHelper;
+import surpriseSharer.helpers.RandomHelper;
 
 public class Candies implements ISurprise{
 
@@ -16,8 +16,8 @@ public class Candies implements ISurprise{
     }
 
     public static Candies generate(){
-        int randomNum = randomHelper.getNewRandomInt(MAX_NUMBER_OF_CANDIES);
-        int randomType = randomHelper.getNewRandomInt(TYPE_LIST.length);
+        int randomNum = RandomHelper.getNewRandomInt(MAX_NUMBER_OF_CANDIES);
+        int randomType = RandomHelper.getNewRandomInt(TYPE_LIST.length);
 
         return new Candies(randomNum, TYPE_LIST[randomType]);
     }

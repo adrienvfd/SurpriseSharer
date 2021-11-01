@@ -1,5 +1,5 @@
 package surpriseSharer.surprise;
-import surpriseSharer.helpers.randomHelper;
+import surpriseSharer.helpers.RandomHelper;
 public class FortuneCookie implements ISurprise{
 
     private String message;
@@ -34,7 +34,7 @@ public class FortuneCookie implements ISurprise{
     }
 
     public static FortuneCookie generate(){
-        int random = randomHelper.getNewRandomInt(QUOTES.length);
+        int random = RandomHelper.getNewRandomInt(QUOTES.length);
         return new FortuneCookie(QUOTES[random][0], QUOTES[random][1]);
     }
 

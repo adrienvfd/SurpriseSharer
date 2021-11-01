@@ -1,7 +1,6 @@
 package surpriseSharer.bag;
 
 import surpriseSharer.surprise.ISurprise;
-import surpriseSharer.helpers.randomHelper;
 
 
 import java.util.Random;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 
 abstract class AbstractBag implements IBag {
     private ArrayList<ISurprise> surpriseList = new ArrayList<>();
-    private static Random random = new Random();
 
     @Override
     public void put(IBag bagOfSurprises){
@@ -31,6 +29,10 @@ abstract class AbstractBag implements IBag {
     @Override
     public void put(ISurprise newSurprise) {
         surpriseList.add(newSurprise);
+    }
+    @Override
+    public void put(ArrayList<ISurprise> newSurpriseList){
+        newSurpriseList.forEach(element  -> this.put(element));
     }
 
     public ArrayList<ISurprise> getSurpriseList(){

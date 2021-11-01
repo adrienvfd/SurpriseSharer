@@ -1,7 +1,7 @@
 package surpriseSharer.surprise;
 
 import java.util.ArrayList;
-import surpriseSharer.helpers.randomHelper;
+import surpriseSharer.helpers.RandomHelper;
 public final class GatherSurprises {
     private static final int NUMBER_OF_SURPRISE_TYPES = 3;
 
@@ -9,13 +9,12 @@ public final class GatherSurprises {
     //o metoda statica, gather(), care va returna o singura surpriza.
 
 
-    private GatherSurprises(){
+    // We prevent instantiation of the class:
+    private GatherSurprises(){}
 
-    }
-
-    public static ISurprise generateRandomSurprise() {
-
-        switch (randomHelper.getNewRandomInt(NUMBER_OF_SURPRISE_TYPES)) {
+    private static ISurprise generateRandomSurprise() {
+        int randomNum = RandomHelper.getNewRandomInt(NUMBER_OF_SURPRISE_TYPES);
+        switch (randomNum) {
             case 0: return FortuneCookie.generate();
             case 1: return Candies.generate();
             case 2: return MinionToy.generate();
@@ -27,8 +26,10 @@ public final class GatherSurprises {
 
     public static ArrayList<ISurprise> gather(int n){
         ArrayList<ISurprise> surpriseArrayList= new ArrayList<>();
-        for (int i = 0; i < n; i++){
-            surpriseArrayList.add(generateRandomSurprise());
+        if (n > 0) {
+            for (int i = 0; i < n; i++) {
+                surpriseArrayList.add(generateRandomSurprise());
+            }
         }
         return surpriseArrayList;
     }
