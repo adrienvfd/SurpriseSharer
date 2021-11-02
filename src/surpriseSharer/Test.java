@@ -95,5 +95,9 @@ public class Test {
                 System.err.println("Input Error");
             }
         }
+
+        // Print Bag#1
+        System.out.println("BAG #1: ");
+        myGiveSurprise.getContainer().printSurpriseList();
     }
 }
