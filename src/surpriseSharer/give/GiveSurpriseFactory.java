@@ -1,5 +1,4 @@
 package surpriseSharer.give;
-import surpriseSharer.bag.IBag;
 import surpriseSharer.helpers.RandomHelper;
 
 public final class GiveSurpriseFactory {
@@ -7,7 +6,6 @@ public final class GiveSurpriseFactory {
     int waitTime;
     String containerType;
 
-    //prevent Instantiation
     public GiveSurpriseFactory(String containerType, int waitTime){
         if (waitTime < 0){
             waitTime = 0;

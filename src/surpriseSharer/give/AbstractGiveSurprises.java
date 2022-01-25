@@ -32,8 +32,6 @@ public abstract class AbstractGiveSurprises implements IGiveSurprise{
     }
 
     private void give(){
-        //ISurprise surprise = container.takeOut();
-        //surprise.enjoy();
         container.takeOut().enjoy();
         surpriseSharer.helpers.Separation.separate();
 

@@ -1,6 +1,5 @@
 package surpriseSharer.give;
 
-import surpriseSharer.bag.IBag;
 
 public class GiveSurpriseAndApplause extends AbstractGiveSurprises{
 
