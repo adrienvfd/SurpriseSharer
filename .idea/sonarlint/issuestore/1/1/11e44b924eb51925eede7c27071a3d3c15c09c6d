@@ -1,0 +1,6 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ô»ì¹ÿÿÿÿÿ8Š†»Ì/
+ƒ
+java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "newRandom".(©éãıÿÿÿÿ8•ø¥ÜÍ/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œøÛÎúÿÿÿÿ

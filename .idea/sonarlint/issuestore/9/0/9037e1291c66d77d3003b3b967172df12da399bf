@@ -1,0 +1,9 @@
+
+L
+java:S1612#"6Replace this lambda with method reference 'this::put'.(‚Ò½±
+S	java:S1060"9Replace this use of System.out or System.err by a logger.(—ÊÄúÿÿÿÿ
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(â‰º²ÿÿÿÿÿ
+N	java:S1065"9Replace this use of System.out or System.err by a logger.(Ìğåô
+†
+java:S1319&"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(«ÊÑˆ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(÷õÒòşÿÿÿÿ
